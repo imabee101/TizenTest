@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # My First Samsung TV App: A Digital Clock
 
 ## About This Project
@@ -72,3 +73,6 @@ This project is open source and available under the [MIT License](LICENSE).
 This was a fun and educational experience in TV app development. I hope this project can serve as a starting point for others who are interested in Tizen TV development. If you have any questions or want to share your own TV app development journey, feel free to reach out!
 
 Happy coding! 🚀
+=======
+# TizenTest
+>>>>>>> efc8722432ea09cecda840cc7cfaa162987a9357
