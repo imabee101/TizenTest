@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(ellipse at center, #02040a 0%, #0a0a1a 50%, #04040f 100%);
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    animation: bg-pulse 30s ease-in-out infinite;
+}
+
+/* Base starfield */
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Multiple layers of stars with different sizes and speeds */
+.stars, .stars2, .stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 50px 60px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 120px 90px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 200px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 250px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 300px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 350px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 400px 120px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 500px 60px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 600px 90px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 700px 30px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 800px 800px;
+    opacity: 0.8;
+    animation: twinkle 7s infinite;
+}
+
+.stars2 {
+    transform: scale(1.5);
+    animation: twinkle 12s infinite, moveStars 100s linear infinite;
+    opacity: 0.6;
+}
+
+.stars3 {
+    transform: scale(2.5);
+    animation: twinkle 16s infinite, moveStars 150s linear infinite;
+    opacity: 0.4;
+}
+
+/* Twinkling effect for stars */
+.twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: twinkle 8s ease-in-out infinite alternate;
+    z-index: 2;
+}
+
+/* Background pulse animation */
+@keyframes bg-pulse {
+    0%, 100% { background-color: #02040a; }
+    50% { background-color: #0a0a1a; }
+}
+
+/* Aurora Effects */
+.aurora {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    filter: blur(12px);
+    -webkit-filter: blur(12px);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    -webkit-mask-image: -webkit-linear-gradient(bottom, 
+        transparent 0%, 
+        black 20%, 
+        black 80%, 
+        transparent 100%
+    );
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.aurora-1 {
+    background: linear-gradient(90deg, 
+        rgba(0, 100, 150, 0.03) 0%, 
+        rgba(0, 150, 200, 0.06) 50%, 
+        rgba(50, 0, 100, 0.03) 100%);
+    animation: aurora-move 35s infinite alternate, aurora-pulse 25s infinite alternate;
+    height: 70%;
+    top: 15%;
+    transform: rotate(5deg);
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+}
+
+.aurora-2 {
+    background: linear-gradient(90deg, 
+        rgba(69, 21, 113, 0.02) 0%, 
+        rgba(37, 0, 65, 0.05) 50%, 
+        rgba(0, 0, 127, 0.02) 100%);
+    animation: aurora-move 40s infinite alternate-reverse, aurora-pulse 35s infinite alternate;
+    height: 80%;
+    top: 10%;
+    transform: rotate(-3deg);
+    filter: blur(25px);
+    -webkit-filter: blur(25px);
+}
+
+.aurora-3 {
+    background: linear-gradient(90deg, 
+        rgba(0, 95, 127, 0.02) 0%, 
+        rgba(0, 127, 127, 0.05) 50%, 
+        rgba(0, 64, 127, 0.02) 100%);
+    animation: aurora-move 45s infinite alternate, aurora-pulse 30s infinite alternate-reverse;
+    height: 60%;
+    top: 20%;
+    transform: rotate(2deg);
+    filter: blur(22px);
+    -webkit-filter: blur(22px);
+}
+
+.aurora-4 {
+    background: linear-gradient(90deg, 
+        rgba(127, 0, 100, 0.01) 0%, 
+        rgba(127, 0, 127, 0.03) 50%, 
+        rgba(100, 0, 127, 0.01) 100%);
+    animation: aurora-move 50s infinite alternate-reverse, aurora-pulse 40s infinite alternate;
+    height: 50%;
+    top: 25%;
+    transform: rotate(-5deg);
+    filter: blur(30px);
+    -webkit-filter: blur(30px);
+}
+
+/* Constellations */
+#constellations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0.3;
+}
+
+/* Animations */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes moveStars {
+    from { transform: translateY(0) rotate(0deg); }
+    to { transform: translateY(-1000px) rotate(360deg); }
+}
+
+@keyframes aurora-move {
+    0% { transform: translateX(-10%) scaleX(1); }
+    100% { transform: translateX(10%) scaleX(1.1); }
+}
+
+@keyframes aurora-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+/* Removed shooting star animation */
+
+/* Clock Container - Optimized for Tizen TV */
+#clock-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background: transparent;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke: 0.2px transparent;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    /* will-change is not supported in Tizen CSS */
+}
+
+/* Clock Text - Optimized for Tizen TV */
+#clock {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 25vmin;
+    color: #4a1a7a;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px rgba(156, 77, 255, 0.7),
+        0 0 40px rgba(122, 44, 191, 0.5);
+    line-height: 1;
+    margin: 0;
+    padding: 0 0.2em;
+    letter-spacing: 0.1em;
+    position: relative;
+    display: inline-block;
+    transform: translateZ(0);
+    text-rendering: optimizeLegibility;
+    /* will-change is not supported in Tizen CSS */
+}
+
+/* AM/PM Indicator - Optimized for Tizen TV */
+#ampm {
+    font-size: 0.35em;
+    vertical-align: top;
+    margin-left: 0.2em;
+    display: inline-block;
+    color: #5a189a;
+    text-shadow: 
+        0 0 2px #fff,
+        0 0 4px rgba(156, 77, 255, 0.7);
+    position: relative;
+    top: -0.2em;
+    opacity: 0.9;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    /* will-change is not supported in Tizen CSS */
+}
+
+/* Smooth Glow Animation - Optimized for Tizen TV */
+@keyframes subtleGlow {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 20px rgba(156, 77, 255, 0.7),
+            0 0 40px rgba(122, 44, 191, 0.5);
+    }
+    50% {
+        text-shadow: 
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px rgba(156, 77, 255, 0.9),
+            0 0 50px rgba(122, 44, 191, 0.7);
+    }
+}
+
+/* Apply the subtle animation to the clock */
+#clock {
+    animation: subtleGlow 8s ease-in-out infinite;
+    /* will-change is not supported in Tizen CSS */
+    transition: text-shadow 0.4s ease-out;
+}
+
+/* 4K Optimized Text Rendering for Tizen TV */
+@media (min-width: 3840px) {
+    #clock {
+        font-size: 30vmin;
+        letter-spacing: 0.1em;
+    }
+    
+    #ampm {
+        font-size: 0.3em;
+    }
+}
+
+/* Performance Optimizations */
+* {
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+    outline: none;
+}
+
+/* Optimize rendering */
+html, body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

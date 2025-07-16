@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://download.tizen.org/releases/milestone/tools/wgt-schema/1.0/widget-schema.rng" type="application/xml"?>
+<widget xmlns="http://www.w3.org/ns/widgets" 
+        xmlns:tizen="http://tizen.org/ns/widgets" 
+        id="http://yourdomain/BigClock" 
+        version="1.0.0"
+        viewmodes="maximized">
+    <tizen:application id="t5f0m8ClCv.BigClock" package="t5f0m8ClCv" required_version="2.3"/>
+    <tizen:category name="http://tizen.org/category/tizen.application"/>
+    <tizen:category name="http://tizen.org/category/tv"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+    <feature name="http://tizen.org/feature/opengles.texture_format.astc"/>
+    <feature name="http://tizen.org/feature/opengles.texture_format.etc"/>
+    <feature name="http://tizen.org/feature/opengles.texture_format.etc1"/>
+    <feature name="http://tizen.org/feature/opengles.texture_format.pvrtc"/>
+    <feature name="http://tizen.org/feature/opengles.texture_format.utc"/>
+    <icon src="vecteezy_time-clock-watch_24091876.png"/>
+    <tizen:metadata key="http://tizen.org/metadata/app_ui_type/base_screen_resolution" value="extensive"/>
+    <tizen:metadata key="http://samsung.com/tv/metadata/prelaunch_support" value="true"/>
+    <tizen:metadata key="http://samsung.com/tv/metadata/optimization" value="true"/>
+    <name>Big Clock</name>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.display"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    <tizen:profile name="tv-samsung"/>
+    <tizen:setting screen-orientation="landscape" context-menu="enable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+</widget>

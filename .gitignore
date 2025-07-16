@@ -1,0 +1,31 @@
+# Tizen Studio specific
+.tizen
+.settings/
+.build-config
+.cproject
+.project
+
+# Node modules
+node_modules/
+
+# Build output
+Debug/
+Release/
+
+# Environment files
+.env
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
