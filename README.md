@@ -1,78 +1,77 @@
-<<<<<<< HEAD
-# My First Samsung TV App: A Digital Clock
+# Digital Clock for Samsung TV
 
 ## About This Project
 
-This is my very first attempt at creating an application for Samsung Smart TV using Tizen Studio. As a beginner in TV app development, I wanted to document my journey and share what I've learned along the way.
+A simple yet elegant digital clock application designed specifically for Samsung Smart TV using Tizen Studio. This project serves as a great starting point for developers new to Tizen TV application development.
 
-### What It Does
+## Features
 
-This is a simple digital clock application with a space-themed background. It displays the current time in 12-hour format with AM/PM indicator. The app features:
+- 🕒 Real-time digital clock with 12-hour format and AM/PM indicator
+- 🌌 Beautiful animated starfield background
+- 📺 Optimized for TV screens with responsive design
+- 🎮 Full remote control support
+- ⚡ Smooth animations and transitions
 
-- Animated starfield background
-- Smooth time updates
-- Responsive design for TV screens
-- Remote control support (use the return button to exit)
+## Screenshot
 
-## My Development Journey
-
-### Why I Started
-
-I've always been curious about TV app development, and Samsung's Tizen platform seemed like a great place to start. This project was my way of dipping my toes into the world of smart TV applications.
-
-### Challenges Faced
-
-1. **Development Environment Setup**
-   - Getting Tizen Studio installed and configured
-   - Setting up the TV emulator
-   - Understanding the Tizen project structure
-
-2. **UI/UX for TV**
-   - Designing for large screens and remote control navigation
-   - Ensuring text is readable from a distance
-   - Optimizing animations for TV performance
-
-3. **Debugging**
-   - Learning to use the Tizen web inspector
-   - Understanding TV-specific JavaScript APIs
-   - Handling remote control input
-
-### What I Learned
-
-- The basics of Tizen web application development
-- How TV apps differ from regular web apps
-- The importance of performance optimization for TV
-- How to handle remote control input
-- The value of proper documentation (which is why I'm writing this!)
+*Screenshot of the app will be added here*
 
 ## Getting Started
 
 ### Prerequisites
 
-- Tizen Studio with TV Extension
-- A Samsung TV or TV emulator
+- [Tizen Studio](https://developer.samsung.com/tv/develop/getting-started/installing-tv-sdk) with TV Extension
+- A Samsung TV (2015 or later) or TV emulator
 - Basic knowledge of HTML, CSS, and JavaScript
 
 ### Installation
 
-1. Clone this repository
-2. Open Tizen Studio
-3. Import the project
-4. Build and run on a TV or emulator
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/tizen-clock-app.git
+   ```
+2. Open Tizen Studio and select "File" > "Import" > "Tizen" > "Tizen Project"
+3. Select the cloned repository directory
+4. Build the project (Project > Build Project)
+5. Run on a connected TV or emulator (Run > Run As > Tizen Web Application)
+
+## Project Structure
+
+```
+.
+├── css/              # Stylesheets
+│   └── style.css
+├── js/               # JavaScript files
+│   └── main.js
+├── config.xml        # Tizen application configuration
+└── index.html        # Main application entry point
+```
+
+## Customization
+
+- To change the clock format, modify the `updateClock()` function in `js/main.js`
+- Adjust the starfield animation in `js/main.js` (look for the `createStarfield` function)
+- Customize colors and styling in `css/style.css`
 
 ## Contributing
 
-While this is primarily a learning project, I'm open to suggestions and improvements! Feel free to fork this repository and submit pull requests.
+Contributions are welcome! Here's how you can help:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Final Thoughts
+## Acknowledgements
 
-This was a fun and educational experience in TV app development. I hope this project can serve as a starting point for others who are interested in Tizen TV development. If you have any questions or want to share your own TV app development journey, feel free to reach out!
+- [Tizen Developer Documentation](https://developer.samsung.com/tv/develop/)
+- [Tizen TV Web Device API](https://developer.samsung.com/tv/develop/api-references/tv-web-device-api-references/)
 
-Happy coding! 🚀
-=======
-# TizenTest
->>>>>>> efc8722432ea09cecda840cc7cfaa162987a9357
+## Support
+
+For support, please [open an issue](https://github.com/yourusername/tizen-clock-app/issues) or reach out to the maintainers.
